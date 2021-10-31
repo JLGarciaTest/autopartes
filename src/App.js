@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import React from "react";
+import '';
 import './App.css';
+import Routes from './Routes/Routes';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Auth0Provider
+    domain="dev-v8-xay1j.us.auth0.com"
+    clientId="7qk5Uw0nslwS9gqw2GcvsmKADWDTSyCt"
+    redirectUri={window.location.origin}
+  >
+      <Routes/>
+  </Auth0Provider>
+
+    
   );
 }
 
