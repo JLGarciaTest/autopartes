@@ -1,12 +1,14 @@
 import React from 'react'
+import Navbars from '../Components/Navbars'
 
-const PublicLayoout = ({children}) => {
+const PublicLayout = ({children}) => {
     return (
         <div>
-            Este es el Public
+            <Navbars />
+            este es mi publicLayout
             {children}
         </div>
     )
 }
 
-export default PublicLayoout
+export default PublicLayout

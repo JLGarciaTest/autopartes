@@ -1,22 +1,23 @@
 import React from 'react'
-import { PlaceholderButton } from 'react-bootstrap'
-import{
-    BrowserRoue as Router,
+import {
+    BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    
+  } from "react-router-dom";
+import PrivateLayout from '../Layouts/PrivateLayout';
+import PublicLayout from '../Layouts/PublicLayout';
+import Dashboard from '../Pages/Admin/Dashboard';
+import Roles from '../Pages/Admin/Roles';
+import Ventas from '../Pages/Admin/Ventas';
+import Features from '../Pages/Public/Features';
+import Index from '../Pages/Public/index';
 
-}from "react-router-dom"
-import PrivateLayout from '../Layouts/PrivateLayout'
-import PublicLayoout from '../Layouts/PublicLayout'
-import Dashboard from '../pages/Admin/Dashboard'
-import Roles from '../pages/Admin/Roles'
-import Ventas from '../pages/Admin/Ventas'
-
- const Routes = () => {
+const Routes = () => {
     return (
-        <Route>
+        <Router>
             <Switch>
-                <Route path={['/dash','/roles','/ventas']}>
+                <Route path={['/dash', '/roles', '/ventas']}>
                     <PrivateLayout>
                         <Switch>
                             <Route path='/dash'>
@@ -26,22 +27,29 @@ import Ventas from '../pages/Admin/Ventas'
                                 <Roles/>
                             </Route>
                             <Route path='/ventas'>
-                                <Ventas/>
+                                <Ventas />
                             </Route>
-                            
+                        
                         </Switch>
+    
                     </PrivateLayout>
                 </Route>
-                <Route path='/'>
-                    <PublicLayoout>
-                        
-                    </PublicLayoout>
-
-
+                <Route path={['/features','/']}>
+                    <PublicLayout>
+                        <Switch>
+                            <Route path='/features'>
+                                <Features/>
+                            </Route>
+                            <Route path='/'>
+                                <Index/>
+                            </Route>
+                        </Switch>
+                    </PublicLayout>
                 </Route>
-                
+
             </Switch>
-        </Route>
+        </Router>
     )
 }
+
 export default Routes

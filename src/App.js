@@ -1,20 +1,17 @@
-import React from "react";
-import '';
+import { Auth0Provider } from '@auth0/auth0-react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Routes from './Routes/Routes';
-import { Auth0Provider } from "@auth0/auth0-react";
 
 function App() {
   return (
     <Auth0Provider
-    domain="dev-v8-xay1j.us.auth0.com"
-    clientId="7qk5Uw0nslwS9gqw2GcvsmKADWDTSyCt"
+    domain="autopartes1.us.auth0.com"
+    clientId="1k8tVBbECR0t0024U1M8p9AH0RGCro53"
     redirectUri={window.location.origin}
   >
-      <Routes/>
+    <Routes />
   </Auth0Provider>
-
-    
   );
 }
 
