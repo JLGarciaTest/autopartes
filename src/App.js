@@ -6,8 +6,8 @@ import Routes from './Routes/Routes';
 function App() {
   return (
     <Auth0Provider
-    domain="autopartes1.us.auth0.com"
-    clientId="1k8tVBbECR0t0024U1M8p9AH0RGCro53"
+    domain="dev-v8-xay1j.us.auth0.com"
+    clientId="7qk5Uw0nslwS9gqw2GcvsmKADWDTSyCt"
     redirectUri={window.location.origin}
   >
     <Routes />
