@@ -1,7 +1,13 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { Auth0Provider } from '@auth0/auth0-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Routes from './Routes/Routes';
+require('dotenv').config();
+
+const Server = require('./Models/server')
+
 
 function App() {
   return (
